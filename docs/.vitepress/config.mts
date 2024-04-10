@@ -1,4 +1,5 @@
 import { defineConfig } from "vitepress"
+import {set_sidebar} from './siderBar.mjs'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -13,20 +14,7 @@ export default defineConfig({
       { text: "Note", link: "/home/index" },
     ],
 
-    sidebar: [
-      {
-        text: "Examples",
-        items: [
-          { text: "Markdown Examples", link: "/example/markdown-examples" },
-          { text: "Runtime API Examples", link: "/example/api-examples" },
-        ],
-      },
-      {
-        text: "Note",
-        items: [{ text: "Note", link: "/home/index" }],
-      },
-    ],
-
+    sidebar: set_sidebar("/docs/posts"),
     socialLinks: [
       { icon: "github", link: "https://github.com/vuejs/vitepress" },
     ],

@@ -18,8 +18,9 @@ hero:
       link: /home/
 
 features:
-  - title: Feature A
+  - title: A
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+    link: /posts/example/api-examples
   - title: Feature B
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
   - title: Feature C
