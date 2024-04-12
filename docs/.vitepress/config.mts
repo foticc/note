@@ -7,6 +7,7 @@ export default defineConfig({
   title: "Note",
   description: "Note site",
   cleanUrls: true,
+  head: [["link", { rel: "icon", href: "/note/favicon.ico" }]],
   themeConfig: {
     search: {
       provider: "local",

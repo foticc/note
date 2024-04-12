@@ -52,7 +52,6 @@ function getList(params, path1, pathname) {
       })
     }
   }
-  console.log("res", res)
   return res
 }
 
