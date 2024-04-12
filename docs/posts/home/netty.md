@@ -1,4 +1,6 @@
-1. netty的io任务  同一连接  会由同一个线程来完成，当线程数不足时才会复用
+# netty
+
+## 1. netty 的 io 任务 同一连接 会由同一个线程来完成，当线程数不足时才会复用
 
 ```java
 public class HelloClient {
@@ -27,8 +29,6 @@ public class HelloClient {
     }
 }
 ```
-
-
 
 ```java
 public class HelloServer {
@@ -61,3 +61,6 @@ public class HelloServer {
 }
 ```
 
+### 1.1 fafaf
+
+afdsfasffd
