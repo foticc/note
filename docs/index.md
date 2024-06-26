@@ -35,9 +35,11 @@ import { useData } from 'vitepress'
 const { theme } = useData()
 </script>
 
+{{theme}}
+
  <div  class="container">
   <div class="articles-grid" >
-    <a class="article" v-for="(value,key,index) in theme.sidebar" :href="value[0].link">
+    <a class="article" v-for="(value,key,index) in theme.sidebar" :href="'/note' + value[0].link">
       <div class="article-title">{{key.replace("/posts","")}}</div>
     </a>
   </div>
