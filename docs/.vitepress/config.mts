@@ -3,7 +3,7 @@ import { generateSidebar } from "./siderBar.mjs"
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  base: "/",
+  base: "/note",
   title: "Note",
   description: "Note site",
   cleanUrls: true,
