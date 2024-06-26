@@ -30,13 +30,15 @@ hero:
 ---
 
 <script setup>
-import { data } from '../docs/.vitepress/home.data.js'
+import { useData } from 'vitepress'
+
+const { theme } = useData()
 </script>
 
- <TFeatures  class="container">
+ <div  class="container">
   <div class="articles-grid" >
-    <a class="article" v-for="(value,key,index) in data" :href="value[0].link">
+    <a class="article" v-for="(value,key,index) in theme.sidebar" :href="value[0].link">
       <div class="article-title">{{key.replace("/posts","")}}</div>
     </a>
   </div>
- </TFeatures>
+ </div>
