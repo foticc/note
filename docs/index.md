@@ -35,8 +35,6 @@ import { useData } from 'vitepress'
 const { theme } = useData()
 </script>
 
-{{theme}}
-
  <div  class="container">
   <div class="articles-grid" >
     <a class="article" v-for="(value,key,index) in theme.sidebar" :href="'/note' + value[0].link">
