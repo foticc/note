@@ -8,8 +8,7 @@ const DIR_PATH = path.resolve()
 // 白名单,过滤不是文章的文件和文件夹
 const WHITE_LIST = ["index.md", ".vitepress", "node_modules", ".idea"]
 // 资源文件 图片等
-const ASSETS_DIR = ["assets", "img"]
-
+const ASSETS_DIR: Array<RegExp> = [/assets/, /img/, /\*.assets/]
 /**
  * 递归遍历文件夹并生成目录结构
  * @param {string} dirPath - 需要遍历的文件夹路径
@@ -26,7 +25,7 @@ function generateStructure(dirPath, baseUrl) {
     const stats = fs.statSync(filePath)
 
     if (stats.isDirectory()) {
-      if (ASSETS_DIR.includes(file)) {
+      if (ASSETS_DIR.some((regex) => regex.test(file))) {
         return
       }
 
