@@ -82,3 +82,34 @@ bf = 左子树高度-右子树的高度
 | RR(右右型) | 在节点的**右**节点的**右**子树插入 | 左旋   |
 | RL(右左型) | 在节点的**右**节点的**左**子树插入 | 右左旋 |
 
+## 删除操作
+
+删除的失衡
+
+![image-20240826105535327](avl.assets/image-20240826105535327.png)
+
+![image-20240826110421200](avl.assets/image-20240826110421200.png)
+
+```java
+// LL失衡
+if (balanceFactor > 1 && getBalanceFactor(node.left) >= 0) {
+    return rotateRight(node);
+}
+// LR
+if (balanceFactor > 1 && getBalanceFactor(node.left) < 0) {
+    node.left = rotateLeft(node.left);
+    return rotateRight(node);
+}
+// RR
+if (balanceFactor < -1 && getBalanceFactor(node.right) <= 0) {
+    return rotateLeft(node);
+}
+// RL
+if (balanceFactor < -1 && getBalanceFactor(node.right) > 0) {
+    node.right = rotateRight(node.right);
+    return rotateLeft(node);
+}
+```
+
+
+
