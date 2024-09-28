@@ -3,3 +3,9 @@
 http://region-9.autodl.pro:41137/
 
 <img src="https://i0.hdslb.com/bfs/article/524d13cb7b4e0d9d13163cf6e6f8b73f458a4291.png@1256w_2102h_!web-article-pic.webp" alt="img" style="zoom: 50%;" />
+
+Collision
+
+​	Player  指当前节点所处的碰撞层
+
+​	Mask  指当前节点能够和哪些碰撞层上的物体碰撞
