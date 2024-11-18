@@ -16,8 +16,8 @@
 
 #### 使用 `?`
 
-```
-rust复制代码fn read_file(path: &str) -> Result<String, std::io::Error> {
+```rust
+fn read_file(path: &str) -> Result<String, std::io::Error> {
     let content = std::fs::read_to_string(path)?; // 如果出错，错误会传播给调用者
     Ok(content)
 }
@@ -28,8 +28,8 @@ rust复制代码fn read_file(path: &str) -> Result<String, std::io::Error> {
 
 调用方式：
 
-```
-rust复制代码fn main() {
+```rust
+fn main() {
     match read_file("example.txt") {
         Ok(content) => println!("File content: {}", content),
         Err(e) => eprintln!("Error reading file: {}", e),
@@ -41,8 +41,8 @@ rust复制代码fn main() {
 
 #### 使用 `unwrap()`
 
-```
-rust复制代码fn read_file(path: &str) -> String {
+```rust
+fn read_file(path: &str) -> String {
     let content = std::fs::read_to_string(path).unwrap(); // 如果出错，程序会直接 panic
     content
 }
@@ -53,8 +53,8 @@ rust复制代码fn read_file(path: &str) -> String {
 
 调用方式：
 
-```
-rust复制代码fn main() {
+```rust
+fn main() {
     let content = read_file("example.txt");
     println!("File content: {}", content);
 }
@@ -72,8 +72,8 @@ rust复制代码fn main() {
 
 - 编写复杂函数时，多个可能出错的操作需要逐步处理：
 
-  ```
-  rust复制代码fn process_data(file_path: &str) -> Result<usize, std::io::Error> {
+  ```rust
+  fn process_data(file_path: &str) -> Result<usize, std::io::Error> {
       let content = std::fs::read_to_string(file_path)?;
       let lines = content.lines().count();
       Ok(lines)
@@ -88,8 +88,8 @@ rust复制代码fn main() {
 
   - 数据绝对有效，比如：
 
-    ```
-    rust复制代码let some_value = Some(42);
+    ```rust
+    let some_value = Some(42);
     let value = some_value.unwrap(); // 确定 `some_value` 不会是 `None`
     ```
 
