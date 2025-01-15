@@ -79,3 +79,15 @@ Are you sure you want to continue? [y/N] y
    ```sh
    docker info | grep "Docker Root Dir"
    ```
+
+
+
+# 调试镜像
+
+如果运行镜像报错(某些文件不存在之类的)，需要进入到镜像中，而镜像又无法运行，使用
+
+```sh
+docker run -it --entrypoint /bin/bash demo:latest
+```
+
+注意：会新建两个调试容器，调试完成后记得删除
