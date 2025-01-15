@@ -1,3 +1,3 @@
 - Gradle Mirrors
   - https://mirrors.cloud.tencent.com/gradle/
-  - https://mirrors.tuna.tsinghua.edu.cn/gradle/
+  - https://mirrors.aliyun.com/macports/distfiles/gradle/
