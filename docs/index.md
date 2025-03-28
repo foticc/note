@@ -40,56 +40,57 @@ const capitalize = (str) => {
   return processedStr.charAt(0).toUpperCase() + processedStr.slice(1);
 };
 </script>
-
- <div :class="$style.container">
-  <div :class="$style.articles" >
-    <a :class="$style.article" v-for="(value,key,index) in theme.sidebar" :href="'/note' + value[0].link">
-      <h6>{{capitalize(key)}}</h6>
-    </a>
-  </div>
- </div>
+ <ul :class="$category-list">
+ <li :class="$category-item" v-for="(value,key,index) in theme.sidebar" :href="'/note' + value[0].link">
+      <i class="fas fa-folder folder-icon"></i>
+      <span :class="$category-title">{{capitalize(key)}}</span>
+  </li>
+ </ul>
 
  <style module>
-/* 样式容器 */
-.container {
-    padding: 20px;
-    background-color: #f5f5f5; /* 背景色 */
-    border-radius: 8px; /* 圆角 */
-}
+  .category-list {
+        list-style: none;
+        padding: 0;
+        display: grid;
+        gap: 6px;
+    }
 
+    .category-item {
+        background: white;
+        padding: 12px 15px;
+        border-radius: 6px;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        transition: all 0.2s ease;
+        display: flex;
+        align-items: center;
+        border: 1px solid #f0f0f0;
+    }
 
-/* 文章列表 */
-.articles {
-    display: flex;
-    flex-wrap: wrap; /* 换行 */
-    margin: -10px; /* 调整负边距以创建间隔 */
-}
+    .category-item:hover {
+        transform: translateX(4px);
+        box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+        background: #fcfdff;
+    }
 
-/* 单个文章链接 */
-.article {
-    flex: 1 1 calc(33.33% - 20px); /* 三列布局，适应宽度 */
-    margin: 10px; /* 间距 */
-    padding: 15px; /* 内边距 */
-    background-color: #fff; /* 白色背景 */
-    border-radius: 5px; /* 圆角 */
-    text-decoration: none; /* 去掉下划线 */
-    color: #333; /* 字体颜色 */
-    transition: transform 0.2s; /* 动画效果 */
-}
+    .folder-icon {
+        font-size: 20px;
+        color: #7f8fa4;
+        margin-right: 12px;
+        opacity: 0.8;
+    }
 
-/* 悬停效果 */
-.article:hover {
-    transform: scale(1.05); /* 鼠标悬停时放大 */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 添加阴影 */
-}
+    .category-title {
+        font-size: 0.95em;
+        font-weight: 500;
+        color: #4a5568;
+        letter-spacing: 0.02em;
+    }
 
-/* 文章标题样式 */
-.article h6 {
-    margin: 0; /* 去掉默认外边距 */
-    font-size: 16px; /* 字体大小 */
-    font-weight: bold; /* 加粗 */
-    color: #007bff; /* 标题颜色 */
-}
-
-
+    h1 {
+        color: #2d3748;
+        font-size: 1.6em;
+        margin-bottom: 1.2em;
+        padding-bottom: 0.6em;
+        border-bottom: 1px solid #e2e8f0;
+    }
 </style>
