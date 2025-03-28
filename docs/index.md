@@ -41,9 +41,10 @@ const capitalize = (str) => {
 };
 </script>
  <ul :class="$category-list">
- <li :class="$category-item" v-for="(value,key,index) in theme.sidebar" :href="'/note' + value[0].link">
-      <i class="fas fa-folder folder-icon"></i>
-      <span :class="$category-title">{{capitalize(key)}}</span>
+ <li :class="$category-item" v-for="(value,key,index) in theme.sidebar">
+       <i class="fas fa-folder folder-icon"></i>
+      <span :class="$category-title"><a :href="'/note' + value[0].link">{{capitalize(key)}} </a></span>
+     
   </li>
  </ul>
 
