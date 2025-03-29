@@ -83,6 +83,7 @@ const capitalize = (str) => {
         transform: translateX(4px);
         box-shadow: 0 3px 8px rgba(0,0,0,0.08);
         background: #fcfdff;
+        cursor: pointer;
     }
 
     .folder-icon {
