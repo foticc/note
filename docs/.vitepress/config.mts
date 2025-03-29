@@ -7,7 +7,10 @@ export default defineConfig({
   title: "Note",
   description: "Note site",
   cleanUrls: true,
-  head: [["link", { rel: "icon", type: "image/png", href: "/favicon.ico" }]],
+  head: [
+    ["link", { rel: "icon", type: "image/png", href: "/favicon.ico" }], 
+    ['link',{ href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css', rel: 'stylesheet' }]
+  ],
   themeConfig: {
     search: {
       provider: "local",
