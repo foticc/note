@@ -43,9 +43,9 @@ const capitalize = (str) => {
 <div :class="$style.container">
     <ul :class="$style.list">
         <li :class="$style.item" v-for="(value,key,index) in theme.sidebar">
-            <i>📁</i>
+            <i>🗂️</i>
             <span :class="$style.title">
-                <a :href="'/note' + value[0].link">{{capitalize(key)}} </a>
+                <a :class="$style.link":href="'/note' + value[0].link">{{capitalize(key)}} </a>
             </span>
         </li>
     </ul>
@@ -64,7 +64,7 @@ const capitalize = (str) => {
         display: grid;
         gap: 6px;
     }
-    a{
+    .link{
         text-decoration: none;
     }
 
