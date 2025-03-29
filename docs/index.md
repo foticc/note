@@ -40,16 +40,25 @@ const capitalize = (str) => {
   return processedStr.charAt(0).toUpperCase() + processedStr.slice(1);
 };
 </script>
- <ul :class="$style.category-list">
-    <li :class="$style.category-item" v-for="(value,key,index) in theme.sidebar">
-        <i>🧊</i>
-        <span :class="$style.category-title">
-            <a :href="'/note' + value[0].link">{{capitalize(key)}} </a>
-        </span>
-    </li>
- </ul>
+<div :class="$style.container">
+    <ul :class="$style.category-list">
+        <li :class="$style.category-item" v-for="(value,key,index) in theme.sidebar">
+            <i>🧊</i>
+            <span :class="$style.category-title">
+                <a :href="'/note' + value[0].link">{{capitalize(key)}} </a>
+            </span>
+        </li>
+    </ul>
+ </div>
 
  <style module>
+    .container {
+        font-family: "Segoe UI", system-ui, sans-serif;
+        max-width: 800px;
+        margin: 1.5rem auto;
+        padding: 0 20px;
+        background-color: #f8f9fb;
+    }
   .category-list {
         list-style: none;
         padding: 0;
