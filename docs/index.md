@@ -41,10 +41,10 @@ const capitalize = (str) => {
 };
 </script>
 <div :class="$style.container">
-    <ul :class="$style.category-list">
-        <li :class="$style.category-item" v-for="(value,key,index) in theme.sidebar">
+    <ul :class="$style.list">
+        <li :class="$style.item" v-for="(value,key,index) in theme.sidebar">
             <i>🧊</i>
-            <span :class="$style.category-title">
+            <span :class="$style.title">
                 <a :href="'/note' + value[0].link">{{capitalize(key)}} </a>
             </span>
         </li>
@@ -59,14 +59,14 @@ const capitalize = (str) => {
         padding: 0 20px;
         background-color: #f8f9fb;
     }
-  .category-list {
+  .list {
         list-style: none;
         padding: 0;
         display: grid;
         gap: 6px;
     }
 
-    .category-item {
+    .item {
         background: white;
         padding: 12px 15px;
         border-radius: 6px;
@@ -77,7 +77,7 @@ const capitalize = (str) => {
         border: 1px solid #f0f0f0;
     }
 
-    .category-item:hover {
+    .item:hover {
         transform: translateX(4px);
         box-shadow: 0 3px 8px rgba(0,0,0,0.08);
         background: #fcfdff;
@@ -90,7 +90,7 @@ const capitalize = (str) => {
         opacity: 0.8;
     }
 
-    .category-title {
+    .title {
         font-size: 0.95em;
         font-weight: 500;
         color: #4a5568;
