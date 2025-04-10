@@ -68,7 +68,7 @@ const capitalize = (str) => {
         text-decoration: none;
     }
 
-    .category-item {
+    .item {
         /* background: white; */
         padding: 12px 15px;
         border-radius: 6px;
