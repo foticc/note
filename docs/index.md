@@ -40,20 +40,32 @@ const capitalize = (str) => {
   return processedStr.charAt(0).toUpperCase() + processedStr.slice(1);
 };
 </script>
- <ul :class="$category-list">
- <li :class="$category-item" v-for="(value,key,index) in theme.sidebar">
-       <i class="fas fa-folder folder-icon"></i>
-      <span :class="$category-title"><a :href="'/note' + value[0].link">{{capitalize(key)}} </a></span>
-     
-  </li>
- </ul>
+<div :class="$style.container">
+    <ul :class="$style.list">
+        <li :class="$style.item" v-for="(value,key,index) in theme.sidebar">
+            <i>🗂️</i>
+            <span :class="$style.title">
+                <a style="text-decoration: none;" :href="'/note' + value[0].link">{{capitalize(key)}} </a>
+            </span>
+        </li>
+    </ul>
+ </div>
 
  <style module>
-  .category-list {
+    .container {
+        font-family: "Segoe UI", system-ui, sans-serif;
+        max-width: 800px;
+        margin: 1.5rem auto;
+        padding: 0 20px;
+    }
+  .list {
         list-style: none;
         padding: 0;
         display: grid;
         gap: 6px;
+    }
+    .link{
+        text-decoration: none;
     }
 
     .category-item {
@@ -67,7 +79,7 @@ const capitalize = (str) => {
         /* border: 1px solid #f0f0f0; */
     }
 
-    .category-item:hover {
+    .item:hover {
         transform: translateX(4px);
         /* box-shadow: 0 3px 8px rgba(0,0,0,0.08); */
         /* background: #fcfdff; */
@@ -80,7 +92,7 @@ const capitalize = (str) => {
         opacity: 0.8;
     }
 
-    .category-title {
+    .title {
         font-size: 0.95em;
         font-weight: 500;
         color: #4a5568;
