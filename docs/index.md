@@ -57,20 +57,20 @@ const capitalize = (str) => {
     }
 
     .category-item {
-        background: white;
+        /* background: white; */
         padding: 12px 15px;
         border-radius: 6px;
-        box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        /* box-shadow: 0 1px 2px rgba(0,0,0,0.05); */
         transition: all 0.2s ease;
         display: flex;
         align-items: center;
-        border: 1px solid #f0f0f0;
+        /* border: 1px solid #f0f0f0; */
     }
 
     .category-item:hover {
         transform: translateX(4px);
-        box-shadow: 0 3px 8px rgba(0,0,0,0.08);
-        background: #fcfdff;
+        /* box-shadow: 0 3px 8px rgba(0,0,0,0.08); */
+        /* background: #fcfdff; */
     }
 
     .folder-icon {
